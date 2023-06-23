@@ -31,8 +31,8 @@ const LoginForm = () => {
     const email = emailInput.current ? emailInput.current.value : "";
     const password = passwordInput.current ? passwordInput.current.value : "";
     const loginAPI =
-      process.env.API_GOLANG_HOST !== undefined
-        ? process.env.API_GOLANG_HOST + "/users/login"
+      process.env.REACT_APP_API_GOLANG_HOST !== undefined
+        ? process.env.REACT_APP_API_GOLANG_HOST + "/users/login"
         : `http://localhost:8080/users/login`;
 
     fetch(loginAPI, {

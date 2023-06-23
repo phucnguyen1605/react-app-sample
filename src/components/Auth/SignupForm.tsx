@@ -31,8 +31,8 @@ const SignupForm = () => {
       return;
     }
     const signupAPI =
-      process.env.API_GOLANG_HOST !== undefined
-        ? process.env.API_GOLANG_HOST + "/users"
+      process.env.REACT_APP_API_GOLANG_HOST !== undefined
+        ? process.env.REACT_APP_API_GOLANG_HOST + "/users"
         : "http://localhost:8080/users";
     const signupData = {
       email: emailInput.current ? emailInput.current.value : "",
