@@ -13,6 +13,7 @@ env:
   ECS_TASK_DEFINITION_NAME: react-app
   ECS_TASK_DEFINITION: taskdefinition.json
   CONTAINER_NAME: react-app
+  API_GOLANG_HOST: https://api.phucnguyen.wiki
 
 jobs:
   deploy:
@@ -40,6 +41,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
+          API_GOLANG_HOST: ${{ env.API_GOLANG_HOST }}
         run: |
           # Build a docker container and
           # push it to ECR so that it can
